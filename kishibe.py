@@ -6,7 +6,7 @@ precedence = (
     ('right','UMINUS'),
     )
 
-# dictionary of names
+
 names = { }
 
 def p_statement_assign(t):
@@ -63,7 +63,7 @@ parser = yacc.yacc()
 
 while True:
     try:
-        s = input('calc > ')   # Use raw_input on Python 2
+        s = input('calc > ') 
     except EOFError:
         break
     parser.parse(s)
