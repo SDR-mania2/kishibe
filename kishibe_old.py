@@ -6,7 +6,6 @@ tokens = (
     'LPAREN','RPAREN','HELP',
     )
 
-# Tokens
 
 t_PLUS    = r'\+'
 t_MINUS   = r'-'
@@ -30,7 +29,7 @@ def t_NUMBER(t):
         t.value = 0
     return t
 
-# Ignored characters
+
 t_ignore = " \t"
 
 def t_newline(t):
@@ -41,11 +40,10 @@ def t_error(t):
     print("Illegal character '%s'" % t.value[0])
     t.lexer.skip(1)
     
-# Build the lexer
+
 import ply.lex as lex
 lexer = lex.lex()
 
-# Parsing rules
 
 precedence = (
     ('left','PLUS','MINUS'),
@@ -53,7 +51,6 @@ precedence = (
     ('right','UMINUS'),
     )
 
-# dictionary of names
 names = { }
 
 def p_statement_assign(t):
