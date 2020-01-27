@@ -54,7 +54,7 @@ def p_error(t):
 
 def p_help(t):
     'expression : HELP'
-    print( "でも断る。" )
+    print("でも断る。")
 
 
 
